@@ -23,15 +23,8 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::group(['prefix'=>'versionOne'],function ($router){
 
-    $router->get('articles',[ArticleController::class,'index']);
-    $router->post('/article/store',[ArticleController::class,'store']);
-    $router->get('users',[UserController::class,'index']);
-    $router->get('user',[UserController::class,'user']);
 
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
 });
-
-//Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//    return $request->user();
-//});

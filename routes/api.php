@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix'=>'versionOne'],function ($router){
 
     $router->get('articles',[ArticleController::class,'index']);
-    $router->get('store',[ArticleController::class,'store']);
+    $router->post('/article/store',[ArticleController::class,'store']);
     $router->get('users',[UserController::class,'index']);
     $router->get('user',[UserController::class,'user']);
 
